@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="employeeId1" class="model.Employee">
+
+		<constructor-arg name="name" value="fatih"></constructor-arg>
+		<constructor-arg name="surname" value="karakas"></constructor-arg>
+		<constructor-arg name="salary" value="1000"></constructor-arg>
+	</bean>
+	<bean id="departmentId" class="model.Department">
+		<constructor-arg name="departmentName" value="IT"></constructor-arg>
+
+	</bean>
+
+	<bean id="employeeId2" class="model.Employee" c:name="berre"
+		c:surname="karakas" c:salary="5000" />
+
+	<bean id="employeeId3" class="model.Employee">
+		<constructor-arg name="name" value="derya"></constructor-arg>
+		<constructor-arg name="surname" value="kaya"></constructor-arg>
+		<constructor-arg name="salary" value="35000"></constructor-arg>
+		<constructor-arg name="department" ref="departmentId"></constructor-arg>
+	</bean>
+</beans>
